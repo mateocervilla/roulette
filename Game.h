@@ -10,7 +10,7 @@ class Game
 {
 private:
     Player players[6];
-
+    std::int32_t gameIterations;
 
 public:
     Game();

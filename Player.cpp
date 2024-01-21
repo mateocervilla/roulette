@@ -99,10 +99,12 @@ void Player::setBetType(bool(*betType)(const std::int16_t&))
 
 void Player::genNextBet()
 {
+    // If there is only one element left, that's the bet
     if (this->bets.size() == 1) {
         this->nextBet = this->bets.front();
     }
     else {
+        // Sum the first and the last elements
         this->nextBet = this->bets.front() + this->bets.back();
         // If the sum is higher than the maximum bet, it must restart
         if(this->nextBet > MAX_BET) {
