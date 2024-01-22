@@ -1,12 +1,7 @@
 #include "Game.h"
 
-int main(int argc, char* argv[]){
-
-    srand(time(NULL));
-
-    int iterations = 0;
-    bool verbosity = false;
-
+static int checkArgs(int argc, char* argv[], int& iterations, bool& verbosity)
+{
      // Loop through command line arguments
     for (int i = 1; i < argc; i++) {
         // Check if the argument starts with '-'
@@ -36,6 +31,20 @@ int main(int argc, char* argv[]){
             return 1;
         }
     }
+
+    return 0;
+}
+
+
+int main(int argc, char* argv[]){
+
+    srand(time(NULL));
+
+    int iterations = 0;
+    bool verbosity = false;
+
+    int ArgsErr = checkArgs(argc, argv, iterations, verbosity);
+    if (ArgsErr) return ArgsErr;
 
     // Init Roulette game
     Game rouletteSim;

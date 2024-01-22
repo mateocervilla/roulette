@@ -54,7 +54,7 @@ void Player::lostGame()
     // - Bet with one element: 3 or 4: Only possible after losing with 3 elements left. 
     //     Not possible with 1 or 2 because after a first loss, the 1 is removed.
 
-    if (betsSize < 3 || (betsSize == 3 && this->bets.at(1) < 5)) {
+    if (betsSize < 3 || (betsSize == 3 && this->bets.at(1) < MIN_BET)) {
         this->clearBets();
     }
     else {
