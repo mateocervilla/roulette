@@ -20,7 +20,6 @@ private:
     std::int16_t lastBet;
     std::int16_t maxBet;
 
-    void init();
     void wonGame();
     void lostGame();
     void clearBets();

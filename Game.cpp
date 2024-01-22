@@ -1,10 +1,8 @@
 #include "Game.h"
 
-#define DEFAULT_IT 10000
-
-
-Game::Game(const std::uint32_t& iterations)
+Game::Game(const std::uint32_t& iterations, const bool& verbosity = 0)
 : gameIterations(iterations)
+, gameVerbosity(verbosity)
 {
     initPlayers();
 }
@@ -12,16 +10,6 @@ Game::Game(const std::uint32_t& iterations)
 Game::Game()
 : Game(DEFAULT_IT)
 {
-}
-
-void Game::setIterations(const std::uint32_t& iterations)
-{
-    this->gameIterations = iterations;
-}
-
-void Game::setVerbosity(const std::uint8_t& verbosity)
-{
-    this->gameVerbosity = verbosity;
 }
 
 void Game::initPlayers() {
@@ -35,6 +23,20 @@ void Game::initPlayers() {
     this->players[3].setBetType(Roulette::isLow, "Lows");
     this->players[4].setBetType(Roulette::isEven, "Evens");
     this->players[5].setBetType(Roulette::isOdd, "Odds");
+}
+
+void Game::setIterations(const std::uint32_t& iterations)
+{
+    if (iterations == 0) {
+        std::cout << "Warning: 0 is invalid for iterations, using " << DEFAULT_IT << " instead" << std::endl;
+        this->gameIterations = DEFAULT_IT;
+    }
+    this->gameIterations = iterations;
+}
+
+void Game::setVerbosity(const bool& verbosity)
+{
+    this->gameVerbosity = verbosity;
 }
 
 void Game::start()

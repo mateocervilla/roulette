@@ -1,17 +1,11 @@
 #include "Player.h"
 
 Player::Player()
-{
-    this->init();
-}
-
-void Player::init()
-{
-    this->balance = 0;
-    this->nextBet = 0;
-    this->lastBet = 0;
-    this->maxBet = 0;
-
+: balance(0)
+, nextBet(0)
+, lastBet(0)
+, maxBet(0)
+{    
     this->bets.reserve(4);
     // Initial bet list
     this->bets = {1,2,3,4};

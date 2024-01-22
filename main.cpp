@@ -21,10 +21,10 @@ int main(int argc, char* argv[]){
     }
 
     if (verbosity) {
-        std::cout << "Iterations: " << iterations << std::endl;
-        std::cout << "Verbosity: " << (verbosity ? "True" : "False") << std::endl;
+        std::cout << "Iterations: " << (iterations ? iterations : DEFAULT_IT) << std::endl;
+        std::cout << "Verbosity: True" << std::endl;
         std::cout << std::endl;
-        rouletteSim.setVerbosity(verbosity);
+        rouletteSim.setVerbosity(true);
     }
 
     rouletteSim.start();
@@ -47,6 +47,7 @@ static void checkArgs(int argc, char* argv[], int& iterations, bool& verbosity)
                         i++; // Skip the next argument, as it is the value for '-i'
                     } else {
                         std::cerr << "Error: Missing value for '-i' option." << std::endl;
+                        showHelp();
                         std::exit(1); // Return error code
                     }
                     break;
@@ -60,10 +61,12 @@ static void checkArgs(int argc, char* argv[], int& iterations, bool& verbosity)
                     std::exit(0);
                 default:
                     std::cerr << "Error: Unknown option '" << argv[i] << "'." << std::endl;
+                    showHelp();
                     std::exit(1);
             }
         } else {
             std::cerr << "Error: Invalid argument '" << argv[i] << "'." << std::endl;
+            showHelp();
             std::exit(1);
         }
     }

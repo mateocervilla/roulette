@@ -1,6 +1,7 @@
 #include "Roulette.h"
 
 #define MAX_VAL 36
+#define LOW_VAL 18
 
 std::int16_t Roulette::play()
 {
@@ -16,12 +17,12 @@ const std::string& Roulette::getNumberColour(std::uint8_t value) const
 // Types of roulette bets
 bool Roulette::isLow(const std::int16_t& value)
 {
-    return (value > 0 && value <= 18);
+    return (value > 0 && value <= LOW_VAL);
 }
 
 bool Roulette::isHigh(const std::int16_t& value)
 {
-    return (value > 18 && value <= 36);
+    return (value > LOW_VAL && value <= MAX_VAL);
 }
 
 bool Roulette::isRed(const std::int16_t& value)
