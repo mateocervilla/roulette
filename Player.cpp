@@ -1,19 +1,27 @@
 #include "Player.h"
 
 Player::Player()
-: balance(0), nextBet(0), maxBet(0)
 {
+    this->init();
+}
+
+Player::Player(bool(*betType)(const std::int16_t&))
+: betType(betType)
+{
+    this->init();
+}
+
+void Player::init()
+{
+    this->balance = 0;
+    this->nextBet = 0;
+    this->maxBet = 0;
+
     this->bets.reserve(4);
     // Initial bet list
     this->bets = {1,2,3,4};
     // Generate next bet
     this->genNextBet();
-}
-
-Player::Player(bool(*betType)(const std::int16_t&))
-{
-    this->betType = betType;
-    Player();
 }
 
 void Player::wonGame()
