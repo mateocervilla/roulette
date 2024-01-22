@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
 
 #include "Roulette.h"
 #include "Player.h"

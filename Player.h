@@ -3,8 +3,6 @@
 #include <iostream>
 #include <vector>
 
-#include "Roulette.h"
-
 #define MAX_BET 4000
 #define MIN_BET 5
 
