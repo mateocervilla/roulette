@@ -43,18 +43,15 @@ void Game::start()
         // Play the roulette and get a number
         int16_t result = Roulette::play();
 
-        if (gameVerbosity) 
-            std::cout << "Winning number: " << result
-                  << " - colour: " << Roulette::colourNames[Roulette::numberColours[result]]
-                  << std::endl;
+        if (gameVerbosity) std::cout << "Winning number: " << result << " - colour: " 
+                << Roulette::colourNames[Roulette::numberColours[result]] << std::endl;
 
         int j = 0;
         for( auto& player : this->players ) {
             bool playerWon = false;
             
             // Player checks if he won
-            if(player.play(result))
-                playerWon = true;
+            playerWon = player.play(result);
 
             if (gameVerbosity) 
                 std::cout << "Player " << (char)(j + 'A') << " bets " << player.getLastBet() << " to " << player.getBetName()
