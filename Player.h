@@ -15,15 +15,14 @@ private:
 
     bool(*betType)(const std::int16_t&);
 
-    std::int32_t balance = 0;
-    std::int16_t nextBet = 0;
+    std::int32_t balance;
+    std::int16_t nextBet;
+    std::int16_t maxBet;
 
     void wonGame();
     void lostGame();
     void clearBets();
     void genNextBet();
-
-    std::int16_t maxBet = 0;
 
 public:
 
@@ -37,6 +36,4 @@ public:
     const std::int16_t& getNextBet() const;
 
     void setBetType(bool(*betType)(const std::int16_t&));
-
 };
-

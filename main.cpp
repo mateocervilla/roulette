@@ -7,5 +7,4 @@ int main(){
     Game rouletteSim;
 
     rouletteSim.start();
-
 }

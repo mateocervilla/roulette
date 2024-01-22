@@ -8,14 +8,14 @@ namespace Roulette
         ZERO, RED, BLACK
     };
     
-    static constexpr std::int8_t numberColours[37]{
+    const std::int8_t numberColours[37]{
         ZERO, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, RED, BLACK, RED,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, BLACK, RED, BLACK, RED,
         BLACK, RED, BLACK, RED
     };
 
-    static std::string colourNames[3]{
+    const std::string colourNames[3]{
         "None", "Red", "Black"
     };
 

@@ -1,6 +1,7 @@
 #include "Player.h"
 
 Player::Player()
+: balance(0), nextBet(0), maxBet(0)
 {
     this->bets.reserve(4);
     // Initial bet list
