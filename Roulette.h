@@ -10,9 +10,7 @@ private:
         ZERO, RED, BLACK
     };
 
-public:
-    
-    static constexpr std::int8_t numberColours[37]{
+    static constexpr std::uint8_t numberColours[37]{
         ZERO, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, RED, BLACK, RED,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, BLACK, RED, BLACK, RED,
@@ -23,7 +21,11 @@ public:
         "None", "Red", "Black"
     };
 
+public:
+
     std::int16_t play();
+
+    const std::string& getNumberColour(std::uint8_t value) const;
 
     static bool isLow(const std::int16_t& value);
     static bool isHigh(const std::int16_t& value);

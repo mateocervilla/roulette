@@ -46,7 +46,7 @@ void Game::start()
         int16_t result = roulette.play();
 
         if (gameVerbosity) std::cout << "Winning number: " << result << " - colour: " 
-                << roulette.colourNames[Roulette::numberColours[result]] << std::endl;
+                << roulette.getNumberColour(result) << std::endl;
 
         int j = 0;
         for( auto& player : this->players ) {
