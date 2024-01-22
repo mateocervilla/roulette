@@ -21,8 +21,8 @@ namespace Roulette
 
     std::int16_t play();
 
-    bool isMinor(const std::int16_t& value);
-    bool isMayor(const std::int16_t& value);
+    bool isLow(const std::int16_t& value);
+    bool isHigh(const std::int16_t& value);
     bool isRed(const std::int16_t& value);
     bool isBlack(const std::int16_t& value);
     bool isEven(const std::int16_t& value);

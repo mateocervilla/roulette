@@ -37,10 +37,10 @@ void Game::initPlayers() {
     this->players[2].setBetName("Reds");
     this->players[3].setBetType(Roulette::isBlack);
     this->players[3].setBetName("Blacks");
-    this->players[4].setBetType(Roulette::isMinor);
-    this->players[4].setBetName("Minors");
-    this->players[5].setBetType(Roulette::isMayor);
-    this->players[5].setBetName("Mayors");
+    this->players[4].setBetType(Roulette::isLow);
+    this->players[4].setBetName("Lows");
+    this->players[5].setBetType(Roulette::isHigh);
+    this->players[5].setBetName("Highs");
 }
 
 void Game::start()

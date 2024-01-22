@@ -9,12 +9,12 @@ std::int16_t Roulette::play()
 }
 
 // Types of roulette bets
-bool Roulette::isMinor(const std::int16_t& value)
+bool Roulette::isLow(const std::int16_t& value)
 {
     return (value > 0 && value <= 18);
 }
 
-bool Roulette::isMayor(const std::int16_t& value)
+bool Roulette::isHigh(const std::int16_t& value)
 {
     return (value > 18 && value <= 36);
 }
