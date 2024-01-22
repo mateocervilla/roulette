@@ -39,12 +39,14 @@ void Game::initPlayers() {
 
 void Game::start()
 {
+    Roulette roulette;
+
     for(int i = 0; i < this->gameIterations; i++) {
         // Play the roulette and get a number
-        int16_t result = Roulette::play();
+        int16_t result = roulette.play();
 
         if (gameVerbosity) std::cout << "Winning number: " << result << " - colour: " 
-                << Roulette::colourNames[Roulette::numberColours[result]] << std::endl;
+                << roulette.colourNames[Roulette::numberColours[result]] << std::endl;
 
         int j = 0;
         for( auto& player : this->players ) {

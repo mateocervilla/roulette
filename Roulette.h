@@ -2,13 +2,17 @@
 
 #include <iostream>
 
-namespace Roulette
+class Roulette
 {
+private:
+
     enum colours {
         ZERO, RED, BLACK
     };
+
+public:
     
-    const std::int8_t numberColours[37]{
+    static constexpr std::int8_t numberColours[37]{
         ZERO, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, RED, BLACK, RED,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, BLACK, RED, BLACK, RED,
@@ -21,10 +25,10 @@ namespace Roulette
 
     std::int16_t play();
 
-    bool isLow(const std::int16_t& value);
-    bool isHigh(const std::int16_t& value);
-    bool isRed(const std::int16_t& value);
-    bool isBlack(const std::int16_t& value);
-    bool isEven(const std::int16_t& value);
-    bool isOdd(const std::int16_t& value);
+    static bool isLow(const std::int16_t& value);
+    static bool isHigh(const std::int16_t& value);
+    static bool isRed(const std::int16_t& value);
+    static bool isBlack(const std::int16_t& value);
+    static bool isEven(const std::int16_t& value);
+    static bool isOdd(const std::int16_t& value);
 };
