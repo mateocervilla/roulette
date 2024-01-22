@@ -21,12 +21,12 @@ bool Roulette::isMayor(const std::int16_t& value)
 
 bool Roulette::isRed(const std::int16_t& value)
 {
-    return Roulette::colours[value] == RED;
+    return Roulette::numberColours[value] == RED;
 }
 
 bool Roulette::isBlack(const std::int16_t& value)
 {
-    return Roulette::colours[value] == BLACK;
+    return Roulette::numberColours[value] == BLACK;
 }
 
 bool Roulette::isEven(const std::int16_t& value)

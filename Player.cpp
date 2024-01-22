@@ -1,6 +1,4 @@
 #include "Player.h"
-#include <stdlib.h>
-
 
 Player::Player()
 {
@@ -112,5 +110,4 @@ void Player::genNextBet()
             this->nextBet = this->bets.front() + this->bets.back();
         }
     }
-
 }

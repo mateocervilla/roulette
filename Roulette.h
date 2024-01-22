@@ -2,20 +2,20 @@
 
 #include <iostream>
 
-#define ZERO 0
-#define RED 1
-#define BLACK 2
-
 namespace Roulette
 {
-    static constexpr std::int8_t colours[37]{
+    enum colours {
+        ZERO, RED, BLACK
+    };
+    
+    static constexpr std::int8_t numberColours[37]{
         ZERO, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, BLACK,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, RED, RED, BLACK, RED,
         BLACK, RED, BLACK, RED, BLACK, RED, BLACK, BLACK, RED, BLACK, RED,
         BLACK, RED, BLACK, RED
     };
 
-    static std::string colour_names[3]{
+    static std::string colourNames[3]{
         "None", "Red", "Black"
     };
 

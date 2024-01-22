@@ -1,6 +1,4 @@
 #include "Game.h"
-#include "Roulette.h"
-#include "Player.h"
 
 Game::Game()
 {
@@ -22,7 +20,7 @@ void Game::start()
         int16_t result = Roulette::play();
 
         std::cout << "Winning number: " << result
-                  << " - colour: " << Roulette::colour_names[Roulette::colours[result]]
+                  << " - colour: " << Roulette::colourNames[Roulette::numberColours[result]]
                   << std::endl;
 
         int j = 1;
