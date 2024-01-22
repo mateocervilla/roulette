@@ -46,6 +46,7 @@ void Game::initPlayers() {
 void Game::start()
 {
     for(int i = 0; i < this->gameIterations; i++) {
+        // Play the roulette and get a number
         int16_t result = Roulette::play();
 
         if (gameVerbosity) 
@@ -56,6 +57,8 @@ void Game::start()
         int j = 0;
         for( auto& player : this->players ) {
             bool playerWon = false;
+            
+            // Player checks if he won
             if(player.play(result))
                 playerWon = true;
 
@@ -68,7 +71,6 @@ void Game::start()
         if (gameVerbosity) std::cout << std::endl;
     }
 
-
     std::cout << "Final balances:" << std::endl;
     int32_t totalBalance = 0;
     for(int i = 0; i < 6; i++) {
@@ -76,7 +78,7 @@ void Game::start()
         std::cout << "Player " << (char)(i + 'A') << " balance: " << balance << std::endl;
         totalBalance += balance;
     }
-    
+
     std::cout << std::endl;
     std::cout << "Total balance: " << totalBalance << std::endl;
 }
