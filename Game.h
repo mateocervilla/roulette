@@ -6,10 +6,12 @@
 #include "Roulette.h"
 #include "Player.h"
 
+#define PLAYERS_NUMBER 6
+
 class Game
 {
 private:
-    Player players[6];
+    Player players[PLAYERS_NUMBER];
     std::uint32_t gameIterations;
     std::uint8_t gameVerbosity;
 

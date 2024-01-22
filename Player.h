@@ -31,7 +31,6 @@ private:
 public:
 
     Player();
-    Player(bool(*betType)(const std::int16_t&));
 
     bool play(const std::int16_t& value);
 
@@ -40,6 +39,5 @@ public:
     const std::int16_t& getMaxBet() const;
     const std::int16_t& getLastBet() const;
 
-    void setBetType(bool(*betType)(const std::int16_t&));
-    void setBetName(const std::string& name);
+    void setBetType(bool(*betType)(const std::int16_t&), const std::string& name);
 };

@@ -5,12 +5,6 @@ Player::Player()
     this->init();
 }
 
-Player::Player(bool(*betType)(const std::int16_t&))
-: betType(betType)
-{
-    this->init();
-}
-
 void Player::init()
 {
     this->balance = 0;
@@ -105,13 +99,9 @@ void Player::clearBets()
     this->bets = {1,2,3,4};
 }
 
-void Player::setBetType(bool(*betType)(const std::int16_t&))
+void Player::setBetType(bool(*betType)(const std::int16_t&), const std::string& name)
 {
     this->betType = betType;
-}
-
-void Player::setBetName(const std::string& name)
-{
     this->betName = name;
 }
 
