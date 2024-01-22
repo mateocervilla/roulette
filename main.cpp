@@ -37,9 +37,7 @@ int main(int argc, char* argv[]){
         }
     }
 
-    std::cout << "Iterations: " << iterations << std::endl;
-    std::cout << "Verbosity: " << (verbosity ? "True" : "False") << std::endl;
-
+    // Init Roulette game
     Game rouletteSim;
 
     if (iterations) {
@@ -47,6 +45,9 @@ int main(int argc, char* argv[]){
     }
 
     if (verbosity) {
+        std::cout << "Iterations: " << iterations << std::endl;
+        std::cout << "Verbosity: " << (verbosity ? "True" : "False") << std::endl;
+        std::cout << std::endl;
         rouletteSim.setVerbosity(verbosity);
     }
 

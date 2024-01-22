@@ -15,6 +15,7 @@ void Player::init()
 {
     this->balance = 0;
     this->nextBet = 0;
+    this->lastBet = 0;
     this->maxBet = 0;
 
     this->bets.reserve(4);
@@ -78,6 +79,11 @@ bool Player::play(const std::int16_t& value)
     }
 }
 
+const std::string& Player::getBetName() const
+{
+    return this->betName;
+}
+
 const std::int32_t& Player::getBalance() const
 {
     return this->balance;
@@ -88,9 +94,9 @@ const std::int16_t& Player::getMaxBet() const
     return this->maxBet;
 }
 
-const std::int16_t& Player::getNextBet() const
+const std::int16_t& Player::getLastBet() const
 {
-    return this->nextBet;
+    return this->lastBet;
 }
 
 void Player::clearBets()
@@ -104,8 +110,14 @@ void Player::setBetType(bool(*betType)(const std::int16_t&))
     this->betType = betType;
 }
 
+void Player::setBetName(const std::string& name)
+{
+    this->betName = name;
+}
+
 void Player::genNextBet()
 {
+    this->lastBet = this->nextBet;
     // If there is only one element left, that's the bet
     if (this->bets.size() == 1) {
         this->nextBet = this->bets.front();
