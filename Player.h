@@ -12,7 +12,7 @@ private:
 
     std::vector<std::int16_t> bets;
 
-    bool(*betType)(const std::int16_t&);
+    bool(*betType)(std::int16_t);
 
     std::string betName;
     std::int32_t balance;
@@ -28,11 +28,11 @@ public:
 
     Player();
 
-    bool play(const std::int16_t& value);
+    bool play(std::int16_t value);
 
     const std::string& getBetName() const;
-    const std::int32_t& getBalance() const;
-    const std::int16_t& getLastBet() const;
+    std::int32_t getBalance() const;
+    std::int16_t getLastBet() const;
 
-    void setBetType(bool(*betType)(const std::int16_t&), const std::string& name);
+    void setBetType(bool(*betType)(std::int16_t), const std::string& name);
 };

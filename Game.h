@@ -19,8 +19,8 @@ private:
 
 public:
     Game();
-    Game(const std::uint32_t& iterations, const bool& verbosity);
-    void setIterations(const std::uint32_t& iterations);
-    void setVerbosity(const bool& verbosity);
+    Game(std::uint32_t iterations, bool verbosity);
+    void setIterations(std::uint32_t iterations);
+    void setVerbosity(bool verbosity);
     void start();
 };

@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game(const std::uint32_t& iterations, const bool& verbosity = 0)
+Game::Game(std::uint32_t iterations, bool verbosity = 0)
 : gameIterations(iterations)
 , gameVerbosity(verbosity)
 {
@@ -25,7 +25,7 @@ void Game::initPlayers() {
     this->players[5].setBetType(Roulette::isOdd, "Odds");
 }
 
-void Game::setIterations(const std::uint32_t& iterations)
+void Game::setIterations(std::uint32_t iterations)
 {
     if (iterations == 0) {
         std::cout << "Warning: 0 is invalid for iterations, using " << DEFAULT_IT << " instead" << std::endl;
@@ -34,14 +34,14 @@ void Game::setIterations(const std::uint32_t& iterations)
     this->gameIterations = iterations;
 }
 
-void Game::setVerbosity(const bool& verbosity)
+void Game::setVerbosity(bool verbosity)
 {
     this->gameVerbosity = verbosity;
 }
 
 void Game::start()
 {
-    Roulette roulette;
+    const Roulette roulette;
 
     for(int i = 0; i < this->gameIterations; i++) {
         // Play the roulette and get a number

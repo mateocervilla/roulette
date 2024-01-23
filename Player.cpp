@@ -44,7 +44,7 @@ void Player::lostGame()
     }
 }
 
-bool Player::play(const std::int16_t& value)
+bool Player::play(std::int16_t value)
 {
     bool playerWon = this->betType(value);
 
@@ -66,12 +66,12 @@ const std::string& Player::getBetName() const
     return this->betName;
 }
 
-const std::int32_t& Player::getBalance() const
+std::int32_t Player::getBalance() const
 {
     return this->balance;
 }
 
-const std::int16_t& Player::getLastBet() const
+std::int16_t Player::getLastBet() const
 {
     return this->lastBet;
 }
@@ -82,7 +82,7 @@ void Player::clearBets()
     this->bets = {1,2,3,4};
 }
 
-void Player::setBetType(bool(*betType)(const std::int16_t&), const std::string& name)
+void Player::setBetType(bool(*betType)(std::int16_t), const std::string& name)
 {
     this->betType = betType;
     this->betName = name;

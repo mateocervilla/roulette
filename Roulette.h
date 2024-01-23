@@ -23,14 +23,14 @@ private:
 
 public:
 
-    std::int16_t play();
+    std::int16_t play() const;
 
-    const std::string& getColourByNumber(const std::uint8_t& value) const;
+    const std::string& getColourByNumber(std::uint8_t value) const;
 
-    static bool isLow(const std::int16_t& value);
-    static bool isHigh(const std::int16_t& value);
-    static bool isRed(const std::int16_t& value);
-    static bool isBlack(const std::int16_t& value);
-    static bool isEven(const std::int16_t& value);
-    static bool isOdd(const std::int16_t& value);
+    static bool isLow(std::int16_t value);
+    static bool isHigh(std::int16_t value);
+    static bool isRed(std::int16_t value);
+    static bool isBlack(std::int16_t value);
+    static bool isEven(std::int16_t value);
+    static bool isOdd(std::int16_t value);
 };
