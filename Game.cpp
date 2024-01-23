@@ -31,7 +31,9 @@ void Game::setIterations(std::uint32_t iterations)
         std::cout << "Warning: 0 is invalid for iterations, using " << DEFAULT_IT << " instead" << std::endl;
         this->gameIterations = DEFAULT_IT;
     }
-    this->gameIterations = iterations;
+    else {
+        this->gameIterations = iterations;
+    }
 }
 
 void Game::setVerbosity(bool verbosity)
