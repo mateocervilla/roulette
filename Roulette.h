@@ -25,7 +25,7 @@ public:
 
     std::int16_t play();
 
-    const std::string& getNumberColour(std::uint8_t value) const;
+    const std::string& getColourByNumber(const std::uint8_t& value) const;
 
     static bool isLow(const std::int16_t& value);
     static bool isHigh(const std::int16_t& value);

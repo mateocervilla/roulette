@@ -18,7 +18,6 @@ private:
     std::int32_t balance;
     std::int16_t nextBet;
     std::int16_t lastBet;
-    std::int16_t maxBet;
 
     void wonGame();
     void lostGame();
@@ -33,7 +32,6 @@ public:
 
     const std::string& getBetName() const;
     const std::int32_t& getBalance() const;
-    const std::int16_t& getMaxBet() const;
     const std::int16_t& getLastBet() const;
 
     void setBetType(bool(*betType)(const std::int16_t&), const std::string& name);

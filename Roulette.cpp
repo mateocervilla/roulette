@@ -9,7 +9,7 @@ std::int16_t Roulette::play()
     return result;
 }
 
-const std::string& Roulette::getNumberColour(std::uint8_t value) const
+const std::string& Roulette::getColourByNumber(const std::uint8_t& value) const
 {
     return this->colourNames[Roulette::numberColours[value]];
 }
